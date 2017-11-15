@@ -18,8 +18,9 @@
 | `GET /api/books?prop=value` | Get all the books of specified prop and value |
 | `POST /api/books` | Add new book |
 | `GET /api/books/:id` | Get book by its id |
-| `PUT /api/books/:id` | Update book |
-| `PATCH /api/books/:id` | Patch book |
+| `PUT /api/books/:id` | Update a book as a whole |
+| `PATCH /api/books/:id` | Patch a book's specified value |
+| `DELETE /api/books/:id` | Delete a book |
 
 ### Mongoose Documentation
 
