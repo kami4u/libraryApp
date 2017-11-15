@@ -3,12 +3,13 @@ var { getBooks, getBookById, addBook, updateBook, updateBookValue, deleteBook } 
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var db;
+var db, port;
 if (process.env.NODE_ENV === 'test') db = require('./config').DB.test; 
 else db = require('./config').DB.dev;
 
 var app = express();
-var port = require('./config').PORT.dev;
+if (process.env.NODE_ENV === 'test') port = require('./config').PORT.test; 
+else port = require('./config').PORT.dev;
 
 mongoose.connect(db, (err) => {
     if (!err) console.log('connected to the Database');
