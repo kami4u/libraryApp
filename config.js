@@ -1,6 +1,6 @@
 module.exports = {
     DB: {
-      test: 'mongodb://localhost/libraryAPI',
+      test: 'mongodb://localhost/libraryAPI_Test',
       dev: 'mongodb://localhost/libraryAPI'
     },
     PORT: {

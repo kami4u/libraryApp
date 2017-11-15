@@ -25,7 +25,7 @@ exports.addBook = (req, res, next) => {
     {
         book.save()
             .then(() => {
-                res.status(201).json(book);
+                res.status(200).json(book);
         })
             .catch(() => {
                 next({status: 500, message: 'Internal server error'});

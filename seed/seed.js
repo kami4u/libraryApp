@@ -2,9 +2,11 @@ var models = require('../models/models');
 var { books } = require('./data/books');
 var async = require('async');
 var mongoose = require('mongoose');
-var db = require('../config').DB;
+var db;
+if (process.env.NODE_ENV === 'test') db = require('../config').DB.test;
+else db = require('../config').DB.dev;
 
-mongoose.connect(db.dev, (err) => {
+mongoose.connect(db, (err) => {
     if (!err) {
         console.log('Connected to db');
         mongoose.connection.db.dropDatabase();

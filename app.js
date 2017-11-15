@@ -3,7 +3,9 @@ var { getBooks, getBookById, addBook, updateBook, updateBookValue, deleteBook } 
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var db = require('./config').DB.dev;
+var db;
+if (process.env.NODE_ENV === 'test') db = require('./config').DB.test; 
+else db = require('./config').DB.dev;
 
 var app = express();
 var port = require('./config').PORT.dev;
@@ -37,3 +39,5 @@ app.use((err,req, res, next) => {
 app.listen(port, () => {
     console.log('listening on port', + port);
 });
+
+module.exports = app;
