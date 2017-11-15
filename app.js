@@ -1,4 +1,4 @@
-var {getBooks} = require('./controllers');
+var { getBooks, getBookById } = require('./controllers');
 
 var express = require('express');
 var mongoose = require('mongoose');
@@ -12,7 +12,8 @@ mongoose.connect(db, (err) => {
     else console.log('error connecting to the Database');
   });
 
-app.get('/books', getBooks);
+app.get('/api/books', getBooks);
+app.get('/api/books/:id', getBookById);
 
 app.get('/', (req, res) => {
     res.send('welcome to my app!!');

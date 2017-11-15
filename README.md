@@ -14,7 +14,9 @@
 
 | Route |   |
 | ------|---|
-| `GET /books` | Get all the books |
+| `GET /api/books` | Get all the books |
+| `GET /api/books?prop=value` | Get all the books of specified prop and value |
+| `GET /api/book/:id` | Get book by its id |
 
 ### Mongoose Documentation
 
