@@ -14,3 +14,14 @@ exports.getBookById = (req, res, next) => {
         res.status(200).json(book);
     });
 };
+
+exports.addBook = (req, res, next) => {
+    var book = new books(req.body);
+    book.save()
+        .then(() => {
+            res.status(200).json(book);
+    })
+        .catch(() => {
+            next({status: 500, message: 'Internal server error'});
+    });
+};

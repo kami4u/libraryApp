@@ -1,6 +1,7 @@
-var { getBooks, getBookById } = require('./controllers');
+var { getBooks, getBookById, addBook } = require('./controllers');
 
 var express = require('express');
+var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var db = require('./config').DB.dev;
 
@@ -10,14 +11,18 @@ var port = require('./config').PORT.dev;
 mongoose.connect(db, (err) => {
     if (!err) console.log('connected to the Database');
     else console.log('error connecting to the Database');
-  });
+});
 
-app.get('/api/books', getBooks);
-app.get('/api/books/:id', getBookById);
+app.use(bodyParser.urlencoded({ extended:true }));
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     res.send('welcome to my app!!');
 });
+app.get('/api/books', getBooks);
+app.post('/api/books', addBook);
+app.get('/api/books/:id', getBookById);
+
 
 app.use((err,req, res, next) => { 
     if (err.status === 500) {res.status(500).json({message: err.message});}
