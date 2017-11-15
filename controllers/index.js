@@ -65,3 +65,16 @@ exports.updateBookValue = (req, res, next) => {
     });
     
 };
+
+exports.deleteBook = (req, res, next) => {
+    books.findById(req.params.id, (err, book) => {
+        if (err) return next({status: 404, message: 'Page not found!!!'});
+        book.remove()
+            .then(() => {
+                res.status(204).send('Removed');
+        })
+            .catch(() => {
+                next({status: 500, message: 'Internal server error'});
+        });
+    });
+};

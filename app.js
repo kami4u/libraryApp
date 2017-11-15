@@ -1,4 +1,4 @@
-var { getBooks, getBookById, addBook, updateBook, updateBookValue } = require('./controllers');
+var { getBooks, getBookById, addBook, updateBook, updateBookValue, deleteBook } = require('./controllers');
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -24,6 +24,7 @@ app.post('/api/books', addBook);
 app.get('/api/books/:id', getBookById);
 app.put('/api/books/:id', updateBook);
 app.patch('/api/books/:id', updateBookValue);
+app.delete('/api/books/:id', deleteBook);
 
 app.use((err,req, res, next) => { 
     if (err.status === 500) {res.status(500).json({message: err.message});}
