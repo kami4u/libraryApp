@@ -17,13 +17,20 @@ exports.getBookById = (req, res, next) => {
 
 exports.addBook = (req, res, next) => {
     var book = new books(req.body);
-    book.save()
-        .then(() => {
-            res.status(200).json(book);
-    })
-        .catch(() => {
-            next({status: 500, message: 'Internal server error'});
-    });
+    if (!req.body.title) {
+        res.status(400);
+        res.send('Title is required');
+    }
+    else 
+    {
+        book.save()
+            .then(() => {
+                res.status(201).json(book);
+        })
+            .catch(() => {
+                next({status: 500, message: 'Internal server error'});
+        });
+    }
 };
 
 exports.updateBook = (req, res, next) => {
