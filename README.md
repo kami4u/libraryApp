@@ -19,6 +19,7 @@
 | `POST /api/books` | Add new book |
 | `GET /api/book/:id` | Get book by its id |
 | `PUT /api/book/:id` | Update book |
+| `PATCH /api/book/:id` | Patch book |
 
 ### Mongoose Documentation
 
