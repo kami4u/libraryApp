@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var cors = require('cors');
 var db, port;
+
 if (process.env.NODE_ENV === 'test') db = require('./config').DB.test; 
 else db = require('./config').DB.dev;
 
