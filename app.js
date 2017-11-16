@@ -3,6 +3,7 @@ var { getBooks, getBookById, addBook, updateBook, updateBookValue, deleteBook } 
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var cors = require('cors');
 var db, port;
 if (process.env.NODE_ENV === 'test') db = require('./config').DB.test; 
 else db = require('./config').DB.dev;
@@ -18,6 +19,7 @@ mongoose.connect(db, (err) => {
 
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send('welcome to my app!!');
