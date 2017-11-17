@@ -11,6 +11,9 @@ var bookModel = new Schema({
     genre: {
         type: String
     },
+    descripton: {
+        type: String
+    },
     read: {
         type: String
     }
