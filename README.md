@@ -6,8 +6,8 @@
 2. Then do `npm install` to install the modules
 3. Seed your database with the main seed file `$ node seed/seed.js`
 4. Run a command `mongod` in a terminal
-5. To run the server do `npm start` so server will be running on `localhost:300`
-6. Go to browser and check the routes like `localhost:3000/books` which will return all the books
+5. To run the server do `npm start` so server will be running on `localhost:4000`
+6. Go to browser and check the routes like `localhost:4000/books` which will return all the books
 7. These are the routes as shown below,
 
 ### Routes
