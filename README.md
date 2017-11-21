@@ -3,12 +3,13 @@
 ### To run the Server
 
 1. Check if node and npm installed by doing `$ node -v` and `$ npm -v`
-2. Then do `npm install` to install the modules
-3. Seed your database with the main seed file `$ node seed/seed.js`
-4. Run a command `mongod` in a terminal
-5. To run the server do `npm start` so server will be running on `localhost:4000`
-6. Go to browser and check the routes like `localhost:4000/books` which will return all the books
-7. These are the routes as shown below,
+2. Check if mongoDB is installed otherwise here is the link `https://docs.mongodb.com/getting-started/shell/installation/`
+3. Then In a terminal window do `npm install` to install required modules
+4. Seed your database with the main seed file in terminal `$ node seed/seed.js`
+5. Run a command `mongod` in a separate terminal window
+6. To run the server do `npm start` so server will be running on `localhost:4000`
+7. Go to browser and check the routes like `localhost:4000/api/books` which will return all the books list
+8. These are the routes as shown below,
 
 ### Routes
 
