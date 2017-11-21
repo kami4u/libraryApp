@@ -8,7 +8,7 @@ var bookModel = new Schema({
     author: {
         type: String
     },
-    genre: {
+    img: {
         type: String
     },
     descripton: {
