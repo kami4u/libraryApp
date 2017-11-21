@@ -2,7 +2,7 @@
 
 ### To run the Server
 
-1. Check if node and npm installed by doing `$ node -v` and `$ npm -v`
+1. Check if node and npm installed by doing `$ node -v` and `$ npm -v` else here is the link to download `https://www.npmjs.com/get-npm`
 2. Check if mongoDB is installed otherwise here is the link `https://docs.mongodb.com/getting-started/shell/installation/`
 3. Then In a terminal window do `npm install` to install required modules
 4. Seed your database with the main seed file in terminal `$ node seed/seed.js`
