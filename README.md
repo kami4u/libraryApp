@@ -9,6 +9,7 @@
 5. Run a command `mongod` in a separate terminal window
 6. To run the server do `npm start` so server will be running on `localhost:4000`
 7. Go to browser and check the routes like `localhost:4000/api/books` which will return all the books list
+8. Here is the link to deployed version of server `https://afternoon-lake-28470.herokuapp.com/`
 8. These are the routes as shown below,
 
 ### Routes
