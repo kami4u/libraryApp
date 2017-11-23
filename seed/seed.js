@@ -1,10 +1,15 @@
+if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
+require('dotenv').config({
+    path: `./.${process.env.NODE_ENV}.env`
+});
+
 var models = require('../models/models');
 var { books } = require('./data/books');
 var async = require('async');
 var mongoose = require('mongoose');
-var db = require('../config').DB;
 
-mongoose.connect(db.dev, (err) => {
+
+mongoose.connect(process.env.DB_URI, (err) => {
     if (!err) {
         console.log('Connected to db');
         mongoose.connection.db.dropDatabase();
