@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 if (!process.env.NODE_ENV) process.env.NODE_ENV = 'dev';
-require('dotenv').config({
+if (!process.env.NODE_ENV !== 'production') require('dotenv').config({
   path: `./.${process.env.NODE_ENV}.env`
 });
 
